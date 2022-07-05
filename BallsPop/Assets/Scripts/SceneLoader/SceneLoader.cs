@@ -13,12 +13,12 @@ public class SceneLoader
         SceneManager.LoadScene(1);
     }
 
-    public void Load_SomeScene(int sceneId)
+    public void Load_Scene(int sceneId)
     {
         SceneManager.LoadScene(sceneId);
     }
 
-    public void Quit_Game()
+    public void QuitGame()
     {
         Application.Quit();
     }
