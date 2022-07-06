@@ -13,11 +13,20 @@ public class EventsHandler
     public delegate void OnGameRestart();
     public event OnGameRestart onGameRestart;
 
+    public delegate void OnGamePause();
+    public event OnGamePause onGamePause;
+
+    public delegate void OnGameUnpause();
+    public event OnGameUnpause onGameUnpause;
+
     public delegate void OnBallDestroyed(int value);
     public event OnBallDestroyed onBallDestroyed;
 
-    public delegate void OnBallMissed();
+    public delegate void OnBallMissed(int value);
     public event OnBallMissed onBallMissed;
+
+    public delegate void OnScoreUpdate();
+    public event OnScoreUpdate onScoreUpdate;
 
 
     public void On_GameStart()
@@ -27,25 +36,40 @@ public class EventsHandler
 
     public void On_GameEnd()
     {
-        Debug.Log("Event > On_GameStart");
         onGameEnd?.Invoke();
     }
 
     public void On_GameRestart()
     {
-        Debug.Log("Event > On_GameRestart");
         onGameRestart?.Invoke();
+
+        Time.timeScale = 1; // Review
+    }
+
+    public void On_GamePause()
+    {
+        onGamePause?.Invoke();
+
+        Time.timeScale = 0; // Review
+    }
+
+    public void On_GameUnpause()
+    {
+        onGameUnpause?.Invoke();
+
+        Time.timeScale = 1; // Review
     }
 
     public void On_BallDestroyed(int value)
     {
         onBallDestroyed?.Invoke(value);
+        onScoreUpdate?.Invoke();
     }
 
-    public void On_BallMissed()
+    public void On_BallMissed(int value)
     {
-        Debug.Log("Event > On_BallMissed");
-        onBallMissed?.Invoke();
+        onBallMissed?.Invoke(value);
+        onScoreUpdate?.Invoke();
     }
 
     public void RemoveSubscribtions()
@@ -53,7 +77,10 @@ public class EventsHandler
         onGameStart = null;
         onGameEnd = null;
         onGameRestart = null;
+        onGamePause = null;
+        onGameUnpause = null;
         onBallDestroyed = null;
         onBallMissed = null;
+        onScoreUpdate = null;
     }
 }

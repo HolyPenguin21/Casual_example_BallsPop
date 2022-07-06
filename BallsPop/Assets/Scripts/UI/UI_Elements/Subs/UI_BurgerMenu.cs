@@ -3,12 +3,12 @@ using UnityEngine.UI;
 
 public class UI_BurgerMenu : UI_Elements
 {
-    GameObject buttonCanvas_obj, menuCanvas_obj;
+    GameObject burgerButtonCanvas_obj, menuCanvas_obj;
     Button burgerButton, quitToMenu_button, quitGame_button;
 
     public UI_BurgerMenu(SceneLoader sceneLoader)
     {
-        Set_BurgerButtonObject(Get_Scene_CanvasObject(buttonCanvas_obj, "BurgerButton"));
+        Set_BurgerButtonObject(Get_Scene_CanvasObject(burgerButtonCanvas_obj, "BurgerButton"));
         Set_BurgerButton(Get_Scene_Button(burgerButton, "Burger"));
 
         Set_BurgerMenuObject(Get_Scene_CanvasObject(menuCanvas_obj, "BurgerMenu"));
@@ -19,7 +19,7 @@ public class UI_BurgerMenu : UI_Elements
     }
 
     #region Menu actions
-    void OpenCloseMenu()
+    private void OpenCloseMenu()
     {
         if (menuCanvas_obj.activeInHierarchy)
         {
@@ -47,11 +47,11 @@ public class UI_BurgerMenu : UI_Elements
     #region Burger button
     public void Set_BurgerButtonObject(GameObject obj)
     {
-        buttonCanvas_obj = obj;
+        burgerButtonCanvas_obj = obj;
 
-        if (buttonCanvas_obj == null)
+        if (burgerButtonCanvas_obj == null)
         {
-            buttonCanvas_obj = MonoBehaviour.Instantiate(Resources.Load("UI/BurgerMenu/BurgerButton_Canvas", typeof(GameObject))) as GameObject;
+            burgerButtonCanvas_obj = MonoBehaviour.Instantiate(Resources.Load("UI/BurgerMenu/BurgerButton_Canvas", typeof(GameObject))) as GameObject;
         }
     }
 

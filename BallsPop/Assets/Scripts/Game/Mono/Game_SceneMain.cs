@@ -8,12 +8,9 @@ public class Game_SceneMain : MonoBehaviour
     SceneLoader sceneLoader;
     EventsHandler eventsHandler;
     Game_UIController uIController;
-    BallsCreator ballsCreator;
+    SpawnController spawnController;    
     Player player;
-    ScoreManager scoreManager;
-
-    bool gameStarted = false;
-    float spawnRate = 0.5f;
+    ScoreManager scoreManager;  
 
     private void Awake()
     {
@@ -24,37 +21,39 @@ public class Game_SceneMain : MonoBehaviour
         player = new Player(eventsHandler);
 
         uIController = new Game_UIController(sceneLoader, eventsHandler, player);
-        scoreManager = new ScoreManager(eventsHandler, player, uIController);
-        ballsCreator = new BallsCreator(sceneSettings, eventsHandler);
+        spawnController = new SpawnController(sceneSettings, eventsHandler);
+        scoreManager = new ScoreManager(eventsHandler, player);
 
         eventsHandler.onGameStart += StartGame;
         eventsHandler.onGameEnd += EndGame;
+        eventsHandler.onGameRestart += EndGame;
+        eventsHandler.onGameRestart += StartGame;
+    }
+
+    private void Update()
+    {
+        spawnController.MakeItHarder();
     }
 
     private void StartGame()
     {
-        gameStarted = true;
-        StartCoroutine(SpawnCicle());
-    }
-
-    private IEnumerator SpawnCicle()
-    {
-        while (gameStarted)
-        {
-            ballsCreator.SpawnBall();
-            yield return new WaitForSeconds(spawnRate);
-        }
+        spawnController.spawnEnabled = true;
+        StartCoroutine(spawnController.SpawnBall());
     }
 
     private void EndGame()
     {
-        gameStarted = false;
-        // save results
-        // reset balls prefabs
-    }
+        StopAllCoroutines();
+
+        spawnController.spawnEnabled = false;
+        spawnController.Reset_ActiveBalls();
+        spawnController.Reset_SpawnVars();
+    }    
 
     private void OnDestroy()
     {
+        StopAllCoroutines();
+
         eventsHandler.RemoveSubscribtions();
     }
 }

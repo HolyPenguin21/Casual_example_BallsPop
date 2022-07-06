@@ -8,30 +8,32 @@ public class UI_Menu_ScorePanel : UI_Elements
     GameObject canvas_obj;
     Text highScore;
 
-    public UI_Menu_ScorePanel(ScoreManager scoreManager)
+    public UI_Menu_ScorePanel()
     {
         canvas_obj = Get_Scene_CanvasObject(canvas_obj, "HighScore");
         highScore = Get_Scene_TextField(highScore, "HighScore");
 
-        Check_CurrentScore(scoreManager);
+        Check_CurrentScore();
     }
 
-    private void Check_CurrentScore(ScoreManager scoreManager)
+    private void Check_CurrentScore()
     {
-        if (scoreManager.Get_HighScore() == 0)
+        int currentHighScore = PlayerPrefs.GetInt("highScore");
+
+        if (currentHighScore == 0)
         {
             Hide();
         }
         else
         {
             Show();
-            Update_Score(scoreManager);
+            Update_Score(currentHighScore);
         }
     }
 
-    private void Update_Score(ScoreManager scoreManager)
+    private void Update_Score(int value)
     {
-        highScore.text = "Current high score :\n" + scoreManager.Get_HighScore();
+        highScore.text = "Current high score :\n" + value;
     }
 
     public override void Hide()
