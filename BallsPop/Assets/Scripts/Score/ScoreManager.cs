@@ -1,10 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class ScoreManager
 {
+    Player player;
+    Game_UIController uIController;
+
+    public ScoreManager(EventsHandler eventsHandler, Player player, Game_UIController uIController)
+    {
+        this.player = player;
+        this.uIController = uIController;
+
+        eventsHandler.onBallDestroyed += Add_CurrentScore;
+    }
+
     public int Get_HighScore()
     {
         return PlayerPrefs.GetInt("highScore");
@@ -17,7 +27,8 @@ public class ScoreManager
     }
 
     public void Add_CurrentScore(int value)
-    { 
-
+    {
+        player.Add_Score(value);
+        uIController.Update_ScoreText(player.currentScore);
     }
 }

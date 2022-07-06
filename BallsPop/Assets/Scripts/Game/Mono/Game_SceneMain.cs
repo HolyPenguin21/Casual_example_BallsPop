@@ -10,9 +10,10 @@ public class Game_SceneMain : MonoBehaviour
     Game_UIController uIController;
     BallsCreator ballsCreator;
     Player player;
-    // prefabHolder
-    // scoreManager
-    // inputManager
+    ScoreManager scoreManager;
+
+    bool gameStarted = false;
+    float spawnRate = 0.5f;
 
     private void Awake()
     {
@@ -23,7 +24,33 @@ public class Game_SceneMain : MonoBehaviour
         player = new Player(eventsHandler);
 
         uIController = new Game_UIController(sceneLoader, eventsHandler, player);
-        ballsCreator = new BallsCreator(sceneSettings);
+        scoreManager = new ScoreManager(eventsHandler, player, uIController);
+        ballsCreator = new BallsCreator(sceneSettings, eventsHandler);
+
+        eventsHandler.onGameStart += StartGame;
+        eventsHandler.onGameEnd += EndGame;
+    }
+
+    private void StartGame()
+    {
+        gameStarted = true;
+        StartCoroutine(SpawnCicle());
+    }
+
+    private IEnumerator SpawnCicle()
+    {
+        while (gameStarted)
+        {
+            ballsCreator.SpawnBall();
+            yield return new WaitForSeconds(spawnRate);
+        }
+    }
+
+    private void EndGame()
+    {
+        gameStarted = false;
+        // save results
+        // reset balls prefabs
     }
 
     private void OnDestroy()

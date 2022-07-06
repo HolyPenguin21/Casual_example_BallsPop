@@ -13,7 +13,7 @@ public class EventsHandler
     public delegate void OnGameRestart();
     public event OnGameRestart onGameRestart;
 
-    public delegate void OnBallDestroyed();
+    public delegate void OnBallDestroyed(int value);
     public event OnBallDestroyed onBallDestroyed;
 
     public delegate void OnBallMissed();
@@ -22,7 +22,6 @@ public class EventsHandler
 
     public void On_GameStart()
     {
-        Debug.Log("Event > On_GameStart");
         onGameStart?.Invoke();
     }
 
@@ -38,10 +37,9 @@ public class EventsHandler
         onGameRestart?.Invoke();
     }
 
-    public void On_BallDestroyed()
+    public void On_BallDestroyed(int value)
     {
-        Debug.Log("Event > On_BallDestroyed");
-        onBallDestroyed?.Invoke();
+        onBallDestroyed?.Invoke(value);
     }
 
     public void On_BallMissed()

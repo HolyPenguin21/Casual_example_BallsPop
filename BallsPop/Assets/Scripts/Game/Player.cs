@@ -35,6 +35,11 @@ public class Player
         curHealth = maxHealth;
     }
 
+    public void Add_Score(int value)
+    {
+        currentScore += value;
+    }
+
     private void ResetScore()
     {
         currentScore = 0;
