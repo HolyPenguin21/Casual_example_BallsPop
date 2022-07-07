@@ -196,6 +196,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4928303912685280198, guid: f2538967ee21ebf4bb16cdd9a0bd6b98, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: e44484f0b5eaf9a46900ff51d74b8924, type: 3}
     - target: {fileID: 4928303913299634783, guid: f2538967ee21ebf4bb16cdd9a0bd6b98, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -280,10 +284,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4928303913299634785, guid: f2538967ee21ebf4bb16cdd9a0bd6b98, type: 3}
+      propertyPath: m_MatchWidthOrHeight
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 4928303913299634787, guid: f2538967ee21ebf4bb16cdd9a0bd6b98, type: 3}
       propertyPath: m_Name
       value: BurgerMenu_Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 4928303913356054926, guid: f2538967ee21ebf4bb16cdd9a0bd6b98, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: e44484f0b5eaf9a46900ff51d74b8924, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f2538967ee21ebf4bb16cdd9a0bd6b98, type: 3}
 --- !u!1 &482341130
@@ -537,6 +549,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2838996120693158939, guid: 80d85f967a90a244288ab5b4e818f170, type: 3}
+      propertyPath: m_Text
+      value: '___
+
+        ---'
+      objectReference: {fileID: 0}
+    - target: {fileID: 2838996120693158939, guid: 80d85f967a90a244288ab5b4e818f170, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: e44484f0b5eaf9a46900ff51d74b8924, type: 3}
+    - target: {fileID: 2838996120693158939, guid: 80d85f967a90a244288ab5b4e818f170, type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 27
+      objectReference: {fileID: 0}
     - target: {fileID: 2838996121329651880, guid: 80d85f967a90a244288ab5b4e818f170, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -621,12 +647,35 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2838996121329651882, guid: 80d85f967a90a244288ab5b4e818f170, type: 3}
+      propertyPath: m_MatchWidthOrHeight
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 2838996121329651892, guid: 80d85f967a90a244288ab5b4e818f170, type: 3}
       propertyPath: m_Name
       value: BurgerButton_Canvas
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 80d85f967a90a244288ab5b4e818f170, type: 3}
+--- !u!1 &1333284725 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2838996121199942977, guid: 80d85f967a90a244288ab5b4e818f170, type: 3}
+  m_PrefabInstance: {fileID: 1333284724}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1333284726
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1333284725}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 846166788bd3bdc4aa29d9f980c2dbb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scaleValue: 1.25
+  timing: 0.25
 --- !u!1 &1463253835
 GameObject:
   m_ObjectHideFlags: 0
@@ -749,6 +798,14 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1008036742422524221, guid: c1652d1d7840cf845824cad3ba59fbae, type: 3}
+      propertyPath: m_RaycastTarget
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1008036742422524221, guid: c1652d1d7840cf845824cad3ba59fbae, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: e44484f0b5eaf9a46900ff51d74b8924, type: 3}
     - target: {fileID: 1008036742422524222, guid: c1652d1d7840cf845824cad3ba59fbae, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0.5
@@ -865,12 +922,35 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1008036743367133651, guid: c1652d1d7840cf845824cad3ba59fbae, type: 3}
+      propertyPath: m_MatchWidthOrHeight
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 1008036743367133661, guid: c1652d1d7840cf845824cad3ba59fbae, type: 3}
       propertyPath: m_Name
       value: ScoreCanvas
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1652d1d7840cf845824cad3ba59fbae, type: 3}
+--- !u!1 &1008036743999844140 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1008036742422524223, guid: c1652d1d7840cf845824cad3ba59fbae, type: 3}
+  m_PrefabInstance: {fileID: 1008036743999844139}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1008036743999844141
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1008036743999844140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 846166788bd3bdc4aa29d9f980c2dbb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scaleValue: 1.25
+  timing: 0.25
 --- !u!1001 &1540233832786950045
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -878,9 +958,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1540233834075055853, guid: e8dd430021deeb8489257cda94d5ca7d, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: e44484f0b5eaf9a46900ff51d74b8924, type: 3}
+    - target: {fileID: 2566193866523507026, guid: e8dd430021deeb8489257cda94d5ca7d, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: e44484f0b5eaf9a46900ff51d74b8924, type: 3}
     - target: {fileID: 2566193867146900274, guid: e8dd430021deeb8489257cda94d5ca7d, type: 3}
       propertyPath: m_Name
       value: PauseMenu_Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 2566193867146900428, guid: e8dd430021deeb8489257cda94d5ca7d, type: 3}
+      propertyPath: m_MatchWidthOrHeight
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 2566193867146900430, guid: e8dd430021deeb8489257cda94d5ca7d, type: 3}
       propertyPath: m_Pivot.x
@@ -975,6 +1067,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3962307008900958132, guid: cf80b5a330d14924b80eab2cc277e1df, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: e44484f0b5eaf9a46900ff51d74b8924, type: 3}
     - target: {fileID: 3962307009066159400, guid: cf80b5a330d14924b80eab2cc277e1df, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -1059,6 +1155,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3962307009066159402, guid: cf80b5a330d14924b80eab2cc277e1df, type: 3}
+      propertyPath: m_MatchWidthOrHeight
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 3962307009066159572, guid: cf80b5a330d14924b80eab2cc277e1df, type: 3}
       propertyPath: m_Name
       value: GameStart_Canvas
@@ -1117,6 +1217,25 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cf80b5a330d14924b80eab2cc277e1df, type: 3}
+--- !u!1 &3962307008230216363 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3962307009550294758, guid: cf80b5a330d14924b80eab2cc277e1df, type: 3}
+  m_PrefabInstance: {fileID: 3962307008230216362}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3962307008230216364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3962307008230216363}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 846166788bd3bdc4aa29d9f980c2dbb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scaleValue: 1.25
+  timing: 0.25
 --- !u!1001 &4453400754386097776
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1124,9 +1243,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4453400755415289081, guid: e7019b9758d3cb84ab4c98126ac4ab8b, type: 3}
+      propertyPath: m_RaycastTarget
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4453400755466055147, guid: e7019b9758d3cb84ab4c98126ac4ab8b, type: 3}
       propertyPath: m_Name
       value: Lifes_Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 4453400755466055149, guid: e7019b9758d3cb84ab4c98126ac4ab8b, type: 3}
+      propertyPath: m_MatchWidthOrHeight
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 4453400755466055151, guid: e7019b9758d3cb84ab4c98126ac4ab8b, type: 3}
       propertyPath: m_Pivot.x
@@ -1212,8 +1339,76 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4453400755975811462, guid: e7019b9758d3cb84ab4c98126ac4ab8b, type: 3}
+      propertyPath: m_RaycastTarget
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4453400756127377160, guid: e7019b9758d3cb84ab4c98126ac4ab8b, type: 3}
+      propertyPath: m_RaycastTarget
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e7019b9758d3cb84ab4c98126ac4ab8b, type: 3}
+--- !u!1 &4453400754386097777 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4453400755975811460, guid: e7019b9758d3cb84ab4c98126ac4ab8b, type: 3}
+  m_PrefabInstance: {fileID: 4453400754386097776}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &4453400754386097778 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4453400755415289079, guid: e7019b9758d3cb84ab4c98126ac4ab8b, type: 3}
+  m_PrefabInstance: {fileID: 4453400754386097776}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &4453400754386097779 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4453400756127377158, guid: e7019b9758d3cb84ab4c98126ac4ab8b, type: 3}
+  m_PrefabInstance: {fileID: 4453400754386097776}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4453400754386097780
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4453400754386097777}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2bea72988d3d7740aca7b11a998f47d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationSide: 0
+  rotationAngle: 10
+  timing: 0.25
+--- !u!114 &4453400754386097781
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4453400754386097778}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2bea72988d3d7740aca7b11a998f47d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationSide: 1
+  rotationAngle: 10
+  timing: 0.25
+--- !u!114 &4453400754386097782
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4453400754386097779}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2bea72988d3d7740aca7b11a998f47d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationSide: 0
+  rotationAngle: 10
+  timing: 0.25
 --- !u!1001 &8969034353563385069
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1309,6 +1504,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PauseButton_Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 8969034352700167319, guid: b00cf8f9c392df74fa3e6da7e9e3bb70, type: 3}
+      propertyPath: m_MatchWidthOrHeight
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 8969034353062526824, guid: b00cf8f9c392df74fa3e6da7e9e3bb70, type: 3}
       propertyPath: m_Color.b
       value: 0.5176471
@@ -1321,5 +1520,28 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0.9137255
       objectReference: {fileID: 0}
+    - target: {fileID: 8969034353296898278, guid: b00cf8f9c392df74fa3e6da7e9e3bb70, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: e44484f0b5eaf9a46900ff51d74b8924, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b00cf8f9c392df74fa3e6da7e9e3bb70, type: 3}
+--- !u!1 &8969034353563385070 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8969034353062526831, guid: b00cf8f9c392df74fa3e6da7e9e3bb70, type: 3}
+  m_PrefabInstance: {fileID: 8969034353563385069}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8969034353563385071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8969034353563385070}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 846166788bd3bdc4aa29d9f980c2dbb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scaleValue: 1.25
+  timing: 0.25

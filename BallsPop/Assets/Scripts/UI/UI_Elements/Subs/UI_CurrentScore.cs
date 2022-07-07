@@ -8,19 +8,15 @@ public class UI_CurrentScore : UI_Elements
     GameObject canvas_obj;
     Text score_text;
 
-    Player player;
-
-    public UI_CurrentScore(Player player)
-    {
-        this.player = player;
-
+    public UI_CurrentScore()
+    { 
         canvas_obj = Get_Scene_CanvasObject(canvas_obj, "ScoreCanvas");
         score_text = Get_Scene_TextField(score_text, "ScoreText");
     }
 
-    public void Update_ScoreText()
+    public void Update_ScoreText(int value)
     {
-        score_text.text = "Score : " + player.currentScore;
+        score_text.text = "Score : " + value;
     }
 
     public override void Hide()
