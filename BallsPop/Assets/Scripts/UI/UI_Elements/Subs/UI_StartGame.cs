@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UI_StartGame : UI_Elements
+public class UI_StartGame : UI_Element
 {
     GameObject canvas_obj;
     Button startButton;

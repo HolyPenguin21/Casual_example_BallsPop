@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UI_Menu_Main : UI_Elements
+public class UI_Menu_Main : UI_Element
 {
     Button startGame, quitGame;
 

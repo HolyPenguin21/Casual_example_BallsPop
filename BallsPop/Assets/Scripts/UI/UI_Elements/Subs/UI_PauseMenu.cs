@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UI_PauseMenu : UI_Elements
+public class UI_PauseMenu : UI_Element
 {
     GameObject pauseButtonCanvas_obj, menuCanvas_obj;
     Button pauseButton, restart_button, resume_button;

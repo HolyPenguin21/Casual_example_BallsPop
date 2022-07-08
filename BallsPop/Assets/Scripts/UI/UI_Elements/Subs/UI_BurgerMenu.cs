@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UI_BurgerMenu : UI_Elements
+public class UI_BurgerMenu : UI_Element
 {
     GameObject burgerButtonCanvas_obj, menuCanvas_obj;
     Button burgerButton, quitToMenu_button, quitGame_button;

@@ -7,7 +7,7 @@ public class Game_SceneMain : MonoBehaviour
     SceneSettings sceneSettings;
     SceneLoader sceneLoader;
     EventsHandler eventsHandler;
-    Game_UIController uIController;
+    UI_Controller uIController;
     SpawnController spawnController;    
     Player player;
     ScoreManager scoreManager;  
@@ -20,7 +20,7 @@ public class Game_SceneMain : MonoBehaviour
 
         player = new Player(eventsHandler);
 
-        uIController = new Game_UIController(sceneLoader, eventsHandler, player);
+        uIController = new UI_Controller();
         spawnController = new SpawnController(sceneSettings, eventsHandler);
         scoreManager = new ScoreManager(eventsHandler, player);
 
@@ -30,6 +30,11 @@ public class Game_SceneMain : MonoBehaviour
         eventsHandler.onGameRestart += StartGame;
     }
 
+    private void Start()
+    {
+        uIController.Prepare_GameSceneUI(sceneLoader, eventsHandler, player);
+    }
+
     private void Update()
     {
         spawnController.MakeItHarder();
@@ -37,7 +42,7 @@ public class Game_SceneMain : MonoBehaviour
 
     private void StartGame()
     {
-        spawnController.spawnEnabled = true;
+        spawnController.SpawnEnabled = true;
         StartCoroutine(spawnController.SpawnBall());
     }
 
@@ -45,8 +50,8 @@ public class Game_SceneMain : MonoBehaviour
     {
         StopAllCoroutines();
 
-        spawnController.spawnEnabled = false;
-        spawnController.Reset_ActiveBalls();
+        spawnController.SpawnEnabled = false;
+        spawnController.Reset_ActiveElements();
         spawnController.Reset_SpawnVars();
     }    
 

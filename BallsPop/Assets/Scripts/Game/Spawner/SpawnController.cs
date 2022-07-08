@@ -5,14 +5,24 @@ using UnityEngine;
 public class SpawnController
 {    
     BallsCreator ballsCreator;
+    //ParticleCreator particleCreator;
 
-    public bool spawnEnabled = false;
+    private bool spawnEnabled = false;
+    public bool SpawnEnabled 
+    { 
+        set 
+        { 
+            spawnEnabled = value; 
+        } 
+    }
+
     float spawnRate = 0.5f;
     float start_spawnRate = 0.5f;
 
     public SpawnController(SceneSettings sceneSettings, EventsHandler eventsHandler)
     {
         ballsCreator = new BallsCreator(sceneSettings, eventsHandler);
+        //particleCreator = new ParticleCreator();
     }
 
     public IEnumerator SpawnBall()
@@ -22,6 +32,10 @@ public class SpawnController
             ballsCreator.SpawnBall();
             yield return new WaitForSeconds(spawnRate);
         }
+    }
+
+    private void SpawnParticle()
+    { 
     }
 
     public void MakeItHarder()
@@ -34,8 +48,9 @@ public class SpawnController
         spawnRate = start_spawnRate;
     }
 
-    public void Reset_ActiveBalls()
+    public void Reset_ActiveElements()
     {
         ballsCreator.Reset_ActiveBalls();
+        //particleCreator.Reset_ActiveParticles(); // TO DO
     }
 }

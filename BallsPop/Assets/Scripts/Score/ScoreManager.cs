@@ -13,7 +13,7 @@ public class ScoreManager
         eventsHandler.onGameEnd += Set_HighScore;
     }
 
-    public void Set_HighScore()
+    private void Set_HighScore()
     {
         int currentScore = player.currentScore;
 
