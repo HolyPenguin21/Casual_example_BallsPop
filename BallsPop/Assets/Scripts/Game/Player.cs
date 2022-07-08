@@ -4,8 +4,13 @@ using UnityEngine;
 
 public class Player
 {
-    public int curHealth;
-    public int maxHealth = 3;
+    private int curHealth;
+    public int CurHealth
+    {
+        get { return curHealth; }
+    }
+
+    int maxHealth = 3;
     public int currentScore;
 
     EventsHandler eventsHandler;

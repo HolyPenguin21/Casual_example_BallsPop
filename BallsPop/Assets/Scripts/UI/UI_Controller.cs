@@ -9,7 +9,7 @@ public class UI_Controller
     UI_PauseMenu pause;
     UI_StartGame startGame;
     UI_ScorePanel scorePanel;
-    // lifesLeft
+    UI_LifesPanel lifesPanel;
 
     Player player;
 
@@ -29,6 +29,7 @@ public class UI_Controller
         pause = new UI_PauseMenu(eventsHandler);
         startGame = new UI_StartGame(eventsHandler);
         scorePanel = new UI_ScorePanel();
+        lifesPanel = new UI_LifesPanel(eventsHandler, player);
 
         eventsHandler.onGameStart += Update_ScoreText;
         eventsHandler.onScoreUpdate += Update_ScoreText;

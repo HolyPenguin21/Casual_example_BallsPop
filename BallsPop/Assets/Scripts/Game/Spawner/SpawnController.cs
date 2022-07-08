@@ -10,10 +10,7 @@ public class SpawnController
     private bool spawnEnabled = false;
     public bool SpawnEnabled 
     { 
-        set 
-        { 
-            spawnEnabled = value; 
-        } 
+        set { spawnEnabled = value; } 
     }
 
     float spawnRate = 0.5f;
@@ -40,6 +37,8 @@ public class SpawnController
 
     public void MakeItHarder()
     {
+        if (!spawnEnabled) return;
+
         spawnRate -= Time.deltaTime / 100f;
     }
 
