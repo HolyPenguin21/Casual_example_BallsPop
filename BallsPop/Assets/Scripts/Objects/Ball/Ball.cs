@@ -44,7 +44,7 @@ public class Ball : MonoBehaviour
         eventsHandler.On_BallDestroyed(scorePointsReward); // Review
     }
 
-    public void BallIsMissed()
+    public void OnTriggerEnter(Collider other)
     {
         gameObject.SetActive(false);
         eventsHandler.On_BallMissed(scorePointsReward); // Review
