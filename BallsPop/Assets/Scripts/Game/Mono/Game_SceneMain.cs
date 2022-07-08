@@ -21,7 +21,7 @@ public class Game_SceneMain : MonoBehaviour
         player = new Player(eventsHandler);
 
         uIController = new UI_Controller();
-        spawnController = new SpawnController(sceneSettings, eventsHandler);
+        spawnController = new SpawnController(sceneSettings, eventsHandler, 0.5f, 100f);
         scoreManager = new ScoreManager(eventsHandler, player);
 
         eventsHandler.onGameStart += StartGame;

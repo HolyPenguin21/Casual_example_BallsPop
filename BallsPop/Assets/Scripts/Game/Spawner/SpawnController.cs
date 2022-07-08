@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class SpawnController
@@ -15,9 +14,14 @@ public class SpawnController
 
     float spawnRate = 0.5f;
     float start_spawnRate = 0.5f;
+    float spawnDelta = 100f;
 
-    public SpawnController(SceneSettings sceneSettings, EventsHandler eventsHandler)
+    public SpawnController(SceneSettings sceneSettings, EventsHandler eventsHandler, float start_spawnRate, float spawnDelta)
     {
+        this.spawnDelta = spawnDelta;
+        this.start_spawnRate = start_spawnRate;
+        spawnRate = this.start_spawnRate;
+
         ballsCreator = new BallsCreator(sceneSettings, eventsHandler);
         //particleCreator = new ParticleCreator();
     }
@@ -31,15 +35,15 @@ public class SpawnController
         }
     }
 
-    private void SpawnParticle()
-    { 
-    }
+    //private void SpawnParticle()
+    //{ 
+    //}
 
     public void MakeItHarder()
     {
         if (!spawnEnabled) return;
 
-        spawnRate -= Time.deltaTime / 100f;
+        spawnRate -= Time.deltaTime / spawnDelta;
     }
 
     public void Reset_SpawnVars()
@@ -50,6 +54,6 @@ public class SpawnController
     public void Reset_ActiveElements()
     {
         ballsCreator.Reset_ActiveBalls();
-        //particleCreator.Reset_ActiveParticles(); // TO DO
+        //particleCreator.Reset_ActiveParticles();
     }
 }
