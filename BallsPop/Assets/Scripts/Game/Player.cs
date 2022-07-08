@@ -10,8 +10,13 @@ public class Player
         get { return curHealth; }
     }
 
+    private int currentScore;
+    public int CurrentScore
+    {
+        get { return currentScore; }
+    }
+
     int maxHealth = 3;
-    public int currentScore;
 
     EventsHandler eventsHandler;
 

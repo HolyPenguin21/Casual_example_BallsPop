@@ -13,7 +13,7 @@ public class ScoreManager
 
     private void Set_HighScore()
     {
-        int currentScore = player.currentScore;
+        int currentScore = player.CurrentScore;
 
         if (currentScore > Get_HighScore())
             PlayerPrefs.SetInt("highScore", currentScore);

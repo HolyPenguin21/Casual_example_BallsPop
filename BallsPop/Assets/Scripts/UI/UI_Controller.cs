@@ -40,6 +40,6 @@ public class UI_Controller
 
     private void Update_ScoreText()
     {
-        scorePanel.Update_ScoreText(player.currentScore);
+        scorePanel.Update_ScoreText(player.CurrentScore);
     }
 }

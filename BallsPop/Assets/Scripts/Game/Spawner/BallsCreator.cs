@@ -6,8 +6,9 @@ public class BallsCreator
 {
     ViewportBounds viewportBounds;
 
-    GameObject[] ballsPool; // Review - use class not object
+    Ball[] ballsPool;
     Transform pollHolder;
+
     GameObject ballPrefab;
 
     public BallsCreator(SceneSettings sceneSettings, EventsHandler eventsHandler)
@@ -20,8 +21,7 @@ public class BallsCreator
 
     private void Setup_BallsPool(int count, EventsHandler eventsHandler)
     {
-        ballsPool = new GameObject[count];
-
+        ballsPool = new Ball[count];
         pollHolder = new GameObject("PoolHolder").transform;
 
         for (int i = 0; i < ballsPool.Length; i++)
@@ -30,26 +30,26 @@ public class BallsCreator
             ball_obj.SetActive(false);
 
             Ball ball_sc = ball_obj.GetComponent<Ball>();
-            ball_sc.eventsHandler = eventsHandler;
+            ball_sc.Init(eventsHandler, 1);
 
-            ballsPool[i] = ball_obj;
+            ballsPool[i] = ball_sc;
         }
     }    
 
     public void SpawnBall()
     {
-        GameObject ballToSpawn = Get_FreeBall();
-        ballToSpawn.transform.position = Set_SpawnPosition();
-        ballToSpawn.transform.rotation = Set_RandomRotation();
+        Ball ball = Get_FreeBall();
+        ball.Tr.position = Set_SpawnPosition();
+        ball.Tr.rotation = Set_RandomRotation();
 
-        ballToSpawn.SetActive(true);
+        ball.Go.SetActive(true);
     }
 
-    private GameObject Get_FreeBall()
+    private Ball Get_FreeBall()
     {
-        foreach (GameObject ball in ballsPool)
+        foreach (Ball ball in ballsPool)
         {
-            if (!ball.activeInHierarchy)
+            if (!ball.Go.activeInHierarchy)
                 return ball;
         }
 
@@ -78,9 +78,9 @@ public class BallsCreator
     {
         for (int i = 0; i < ballsPool.Length; i++)
         {
-            GameObject ball = ballsPool[i];
-            if (ball.activeInHierarchy)
-                ball.SetActive(false);
+            Ball ball = ballsPool[i];
+            if (ball.Go.activeInHierarchy)
+                ball.Go.SetActive(false);
         }
     }
 }

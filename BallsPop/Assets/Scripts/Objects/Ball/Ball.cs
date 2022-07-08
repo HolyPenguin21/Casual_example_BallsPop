@@ -1,27 +1,48 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 
 public class Ball : MonoBehaviour
 {
-    public int scorePointsReward = 1;
-
-    Transform tr;
+    private GameObject go;
+    private Transform tr;
     Transform mesh_tr;
+
+    private int scorePointsReward = 1;
 
     ContinuousRotation continuousRotation;
     Movement movement;
 
-    [HideInInspector] public EventsHandler eventsHandler; // Review
+    EventsHandler eventsHandler;
+
+    public int ScorePointsReward
+    {
+        get { return scorePointsReward; }
+    }
+
+    public GameObject Go
+    {
+        get { return go; }
+    }
+
+    public Transform Tr
+    {
+        get { return tr; }
+    }
 
     private void Awake()
     {
+        go = gameObject;
         tr = transform;
         mesh_tr = tr.Find("Mesh");
 
         continuousRotation = new ContinuousRotation();
         movement = new Movement();
+    }
+
+    public void Init(EventsHandler eventsHandler, int scorePointsReward)
+    {
+        this.eventsHandler = eventsHandler;
+        this.scorePointsReward = scorePointsReward;
     }
 
     private void OnEnable()
@@ -40,13 +61,13 @@ public class Ball : MonoBehaviour
     {
         if (Time.timeScale == 0) return;
 
-        gameObject.SetActive(false);
-        eventsHandler.On_BallDestroyed(scorePointsReward); // Review
+        go.SetActive(false);
+        eventsHandler.On_BallDestroyed(scorePointsReward);
     }
 
     public void OnTriggerEnter(Collider other)
     {
-        gameObject.SetActive(false);
-        eventsHandler.On_BallMissed(scorePointsReward); // Review
+        go.SetActive(false);
+        eventsHandler.On_BallMissed(scorePointsReward);
     }
 }
