@@ -4,7 +4,7 @@ using UnityEngine;
 public class SpawnController
 {    
     BallsCreator ballsCreator;
-    //ParticleCreator particleCreator;
+    ParticleCreator particleCreator;
 
     private bool spawnEnabled = false;
     public bool SpawnEnabled 
@@ -23,7 +23,9 @@ public class SpawnController
         spawnRate = this.start_spawnRate;
 
         ballsCreator = new BallsCreator(sceneSettings, eventsHandler);
-        //particleCreator = new ParticleCreator();
+        particleCreator = new ParticleCreator();
+
+        eventsHandler.onBallDestroyedEffect += SpawnParticle;
     }
 
     public IEnumerator SpawnBall()
@@ -35,9 +37,10 @@ public class SpawnController
         }
     }
 
-    //private void SpawnParticle()
-    //{ 
-    //}
+    private void SpawnParticle(Vector3 pos)
+    {
+        particleCreator.SpawnParticle(pos);
+    }
 
     public void MakeItHarder()
     {
@@ -54,6 +57,6 @@ public class SpawnController
     public void Reset_ActiveElements()
     {
         ballsCreator.Reset_ActiveBalls();
-        //particleCreator.Reset_ActiveParticles();
+        particleCreator.Reset_ActiveParticles();
     }
 }

@@ -22,6 +22,9 @@ public class EventsHandler
     public delegate void OnBallDestroyed(int value);
     public event OnBallDestroyed onBallDestroyed;
 
+    public delegate void OnBallDestroyedEffect(Vector3 pos);
+    public event OnBallDestroyedEffect onBallDestroyedEffect;
+
     public delegate void OnBallMissed(int value);
     public event OnBallMissed onBallMissed;
 
@@ -66,6 +69,11 @@ public class EventsHandler
         onScoreUpdate?.Invoke();
     }
 
+    public void On_BallDestroyedEffect(Vector3 pos)
+    {
+        onBallDestroyedEffect?.Invoke(pos);
+    }
+
     public void On_BallMissed(int value)
     {
         onBallMissed?.Invoke(value);
@@ -80,6 +88,7 @@ public class EventsHandler
         onGamePause = null;
         onGameUnpause = null;
         onBallDestroyed = null;
+        onBallDestroyedEffect = null;
         onBallMissed = null;
         onScoreUpdate = null;
     }

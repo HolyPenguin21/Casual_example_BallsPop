@@ -17,12 +17,21 @@ public class BallsCreator
         ballPrefab = Resources.Load("Objects/BallPrefab", typeof(GameObject)) as GameObject;
 
         Setup_BallsPool(50, eventsHandler);
+    }    
+
+    public void SpawnBall()
+    {
+        Ball ball = Get_FreeBall();
+        ball.Tr.position = Set_SpawnPosition();
+        ball.Tr.rotation = Set_RandomRotation();
+
+        ball.Go.SetActive(true);
     }
 
     private void Setup_BallsPool(int count, EventsHandler eventsHandler)
     {
         ballsPool = new Ball[count];
-        pollHolder = new GameObject("PoolHolder").transform;
+        pollHolder = new GameObject("PoolHolder_Balls").transform;
 
         for (int i = 0; i < ballsPool.Length; i++)
         {
@@ -34,15 +43,6 @@ public class BallsCreator
 
             ballsPool[i] = ball_sc;
         }
-    }    
-
-    public void SpawnBall()
-    {
-        Ball ball = Get_FreeBall();
-        ball.Tr.position = Set_SpawnPosition();
-        ball.Tr.rotation = Set_RandomRotation();
-
-        ball.Go.SetActive(true);
     }
 
     private Ball Get_FreeBall()

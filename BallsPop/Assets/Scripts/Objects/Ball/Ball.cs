@@ -63,6 +63,7 @@ public class Ball : MonoBehaviour
 
         go.SetActive(false);
         eventsHandler.On_BallDestroyed(scorePointsReward);
+        eventsHandler.On_BallDestroyedEffect(tr.position);
     }
 
     public void OnTriggerEnter(Collider other)
