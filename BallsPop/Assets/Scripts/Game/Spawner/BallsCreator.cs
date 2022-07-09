@@ -4,22 +4,23 @@ using UnityEngine;
 
 public class BallsCreator
 {
-    ViewportBounds viewportBounds;
+    GameObject prefab;
 
     Ball[] ballsPool;
-    Transform pollHolder;
+    Transform poolHolder;
 
-    GameObject ballPrefab;
+    ViewportBounds viewportBounds;
 
     public BallsCreator(SceneSettings sceneSettings, EventsHandler eventsHandler)
     {
-        viewportBounds = sceneSettings.Get_ViewportBounds();
-        ballPrefab = Resources.Load("Objects/BallPrefab", typeof(GameObject)) as GameObject;
+        prefab = Resources.Load("Objects/BallPrefab", typeof(GameObject)) as GameObject;
 
-        Setup_BallsPool(50, eventsHandler);
+        viewportBounds = sceneSettings.Get_ViewportBounds();
+
+        PreparePool(50, eventsHandler);
     }    
 
-    public void SpawnBall()
+    public void SpawnObject()
     {
         Ball ball = Get_FreeBall();
         ball.Tr.position = Set_SpawnPosition();
@@ -28,14 +29,14 @@ public class BallsCreator
         ball.Go.SetActive(true);
     }
 
-    private void Setup_BallsPool(int count, EventsHandler eventsHandler)
+    public void PreparePool(int count, EventsHandler eventsHandler)
     {
         ballsPool = new Ball[count];
-        pollHolder = new GameObject("PoolHolder_Balls").transform;
+        poolHolder = new GameObject("PoolHolder_Balls").transform;
 
         for (int i = 0; i < ballsPool.Length; i++)
         {
-            GameObject ball_obj = MonoBehaviour.Instantiate(ballPrefab, pollHolder);
+            GameObject ball_obj = MonoBehaviour.Instantiate(prefab, poolHolder);
             ball_obj.SetActive(false);
 
             Ball ball_sc = ball_obj.GetComponent<Ball>();

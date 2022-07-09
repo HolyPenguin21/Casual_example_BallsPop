@@ -32,14 +32,14 @@ public class SpawnController
     {
         while (spawnEnabled)
         {
-            ballsCreator.SpawnBall();
+            ballsCreator.SpawnObject();
             yield return new WaitForSeconds(spawnRate);
         }
     }
 
     private void SpawnParticle(Vector3 pos)
     {
-        particleCreator.SpawnParticle(pos);
+        particleCreator.SpawnObject(pos);
     }
 
     public void MakeItHarder()

@@ -4,19 +4,19 @@ using UnityEngine;
 
 public class ParticleCreator
 {
-    GameObject[] particlePool;
-    Transform pollHolder;
+    GameObject prefab;
 
-    GameObject particlePrefab;
+    GameObject[] particlePool;
+    Transform poolHolder;
 
     public ParticleCreator()
     {
-        particlePrefab = Resources.Load("Objects/PopEffect", typeof(GameObject)) as GameObject;
+        prefab = Resources.Load("Objects/PopEffect", typeof(GameObject)) as GameObject;
 
-        Setup_ParticlesPool(20);
+        PreparePool(20);
     }
 
-    public void SpawnParticle(Vector3 spawnPos)
+    public void SpawnObject(Vector3 spawnPos)
     {
         GameObject particle = Get_FreeParticle();
         particle.transform.position = spawnPos;
@@ -24,14 +24,14 @@ public class ParticleCreator
         particle.SetActive(true);
     }
 
-    private void Setup_ParticlesPool(int count)
+    public void PreparePool(int count)
     {
         particlePool = new GameObject[count];
-        pollHolder = new GameObject("PoolHolder_PopEffects").transform;
+        poolHolder = new GameObject("PoolHolder_PopEffects").transform;
 
         for (int i = 0; i < particlePool.Length; i++)
         {
-            GameObject particle_obj = MonoBehaviour.Instantiate(particlePrefab, pollHolder);
+            GameObject particle_obj = MonoBehaviour.Instantiate(prefab, poolHolder);
             particle_obj.SetActive(false);
 
             particlePool[i] = particle_obj;
