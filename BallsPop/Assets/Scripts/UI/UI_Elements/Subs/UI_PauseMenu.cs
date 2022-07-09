@@ -14,12 +14,12 @@ public class UI_PauseMenu : UI_Element
     {
         this.eventsHandler = eventsHandler;
 
-        Set_PauseButtonObject(Get_Scene_CanvasObject(pauseButtonCanvas_obj, "PauseButton"));
-        Set_PauseButton(Get_Scene_Button(pauseButton, "Pause"));
+        Set_PauseButtonObject(Get_SceneObject(pauseButtonCanvas_obj, "PauseButton"));
+        Set_PauseButton(Get_SceneObject(pauseButton, "Pause"));
 
-        Set_PauseMenuObject(Get_Scene_CanvasObject(menuCanvas_obj, "PauseMenu"));
-        Set_RestartButton(Get_Scene_Button(restart_button, "Restart"));
-        Set_ResumeButton(Get_Scene_Button(resume_button, "Resume"));
+        Set_PauseMenuObject(Get_SceneObject(menuCanvas_obj, "PauseMenu"));
+        Set_RestartButton(Get_SceneObject(restart_button, "Restart"));
+        Set_ResumeButton(Get_SceneObject(resume_button, "Resume"));
 
         Hide();
         Disable_PauseButton();

@@ -8,12 +8,12 @@ public class UI_BurgerMenu : UI_Element
 
     public UI_BurgerMenu(SceneLoader sceneLoader)
     {
-        Set_BurgerButtonObject(Get_Scene_CanvasObject(burgerButtonCanvas_obj, "BurgerButton"));
-        Set_BurgerButton(Get_Scene_Button(burgerButton, "Burger"));
+        Set_BurgerButtonObject(Get_SceneObject(burgerButtonCanvas_obj, "BurgerButton"));
+        Set_BurgerButton(Get_SceneObject(burgerButton, "Burger"));
 
-        Set_BurgerMenuObject(Get_Scene_CanvasObject(menuCanvas_obj, "BurgerMenu"));
-        Set_QuitToMenuButton(Get_Scene_Button(quitToMenu_button, "QuitToMenu"), sceneLoader);
-        Set_QuitGameButton(Get_Scene_Button(quitGame_button, "QuitGame"), sceneLoader);
+        Set_BurgerMenuObject(Get_SceneObject(menuCanvas_obj, "BurgerMenu"));
+        Set_QuitToMenuButton(Get_SceneObject(quitToMenu_button, "QuitToMenu"), sceneLoader);
+        Set_QuitGameButton(Get_SceneObject(quitGame_button, "QuitGame"), sceneLoader);
 
         Hide();
     }

@@ -13,13 +13,13 @@ public class UI_Menu_Main : UI_Element
 
     private void Setup_StartButton(SceneLoader sceneLoader)
     {
-        startGame = Get_Scene_Button(startGame, "StartGame");
+        startGame = Get_SceneObject(startGame, "StartGame");
         startGame.onClick.AddListener(() => sceneLoader.Load_GameScene());
     }
 
     private void Setup_QuitButton(SceneLoader sceneLoader)
     {
-        quitGame = Get_Scene_Button(quitGame, "Quit");
+        quitGame = Get_SceneObject(quitGame, "Quit");
         quitGame.onClick.AddListener(() => sceneLoader.QuitGame());
     }
 

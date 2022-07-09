@@ -10,8 +10,8 @@ public class UI_ScorePanel : UI_Element
 
     public UI_ScorePanel()
     { 
-        canvas_obj = Get_Scene_CanvasObject(canvas_obj, "ScoreCanvas");
-        score_text = Get_Scene_TextField(score_text, "ScoreText");
+        canvas_obj = Get_SceneObject(canvas_obj, "ScoreCanvas");
+        score_text = Get_SceneObject(score_text, "ScoreText");
     }
 
     public void Update_ScoreText(int value)

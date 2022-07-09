@@ -10,8 +10,8 @@ public class UI_StartGame : UI_Element
 
     public UI_StartGame(EventsHandler eventsHandler)
     {
-        Set_CanvasObject(Get_Scene_CanvasObject(canvas_obj, "GameStart"));
-        Set_StartButton(Get_Scene_Button(startButton, "Start"), eventsHandler);
+        Set_CanvasObject(Get_SceneObject(canvas_obj, "GameStart"));
+        Set_StartButton(Get_SceneObject(startButton, "Start"), eventsHandler);
 
         eventsHandler.onGameStart += Hide;
         eventsHandler.onGameEnd += Show;

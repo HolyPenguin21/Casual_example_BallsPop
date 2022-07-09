@@ -6,57 +6,21 @@ public abstract class UI_Element
     public abstract void Hide();
     public abstract void Show();
 
-    protected GameObject Get_Scene_CanvasObject(GameObject someVar, string name)
+    protected T Get_SceneObject<T>(T someVar, string name) where T : Object
     {
         if (someVar != null) return someVar;
 
-        Canvas[] allCanvases = MonoBehaviour.FindObjectsOfType<Canvas>();
+        T[] objects = MonoBehaviour.FindObjectsOfType<T>();
 
-        for (int i = 0; i < allCanvases.Length; i++)
+        for (int i = 0; i < objects.Length; i++)
         {
-            Canvas canvas = allCanvases[i];
+            T obj = objects[i];
 
-            if (canvas.gameObject.name.Contains(name))
-                return canvas.gameObject;
+            if (obj.name.Contains(name))
+                return obj;
         }
 
-        Debug.Log($"'{name}' Canvas object is not set as variable");
-        return null;
-    }
-
-    protected Text Get_Scene_TextField(Text someVar, string name)
-    {
-        if (someVar != null) return someVar;
-
-        Text[] allTextFields = MonoBehaviour.FindObjectsOfType<Text>();
-
-        for (int i = 0; i < allTextFields.Length; i++)
-        {
-            Text textField = allTextFields[i];
-
-            if (textField.gameObject.name.Contains(name))
-                return textField.GetComponent<Text>();
-        }
-
-        Debug.Log($"'{name}' Text component is not set as variable");
-        return null;
-    }
-
-    protected Button Get_Scene_Button(Button someVar, string name)
-    {
-        if (someVar != null) return someVar;
-
-        Button[] allButtons = MonoBehaviour.FindObjectsOfType<Button>();
-
-        for (int i = 0; i < allButtons.Length; i++)
-        {
-            Button button = allButtons[i];
-
-            if (button.gameObject.name.Contains(name))
-                return button;
-        }
-
-        Debug.Log($"'{name}' Button is not set as variable");
+        Debug.Log($"'{name}' Object is not set as variable");
         return null;
     }
 }

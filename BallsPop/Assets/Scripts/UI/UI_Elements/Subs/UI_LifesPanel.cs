@@ -13,7 +13,7 @@ public class UI_LifesPanel : UI_Element
     {
         this.player = player;
 
-        canvas_obj = Get_Scene_CanvasObject(canvas_obj, "Lifes");
+        canvas_obj = Get_SceneObject(canvas_obj, "Lifes");
 
         eventsHandler.onGameStart += Set_MaxLifes;
         eventsHandler.onGameRestart += Set_MaxLifes;
